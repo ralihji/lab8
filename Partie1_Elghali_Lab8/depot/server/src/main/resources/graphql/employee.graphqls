@@ -1,0 +1,18 @@
+# Schéma GraphQL des employés (SEG3502, laboratoire 8).
+# Les noms, arguments et champs suivent exactement les opérations du client
+# Angular fourni : client/src/app/service/employee.service.ts
+
+type Query {
+    # Liste de tous les employés (requête GET_EMPLOYEES du client)
+    employees: [Employee]
+}
+
+type Employee {
+    id: ID!
+    name: String!
+    dateOfBirth: String!
+    city: String!
+    salary: Float!
+    gender: String
+    email: String
+}

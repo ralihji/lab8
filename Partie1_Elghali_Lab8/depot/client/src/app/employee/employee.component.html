@@ -1,0 +1,55 @@
+<a class="btn btn-primary" [routerLink]="['/employees']">Employee List</a>
+<div class="container">
+  <h1>Employee Entry Form</h1>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" formControlName="name" required>
+      <div [hidden]="name.pristine || name.valid"
+           class="alert alert-danger">
+        Employee Name is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="dob">Date of Birth:</label>
+      <input type="date" class="form-control" id="dob" formControlName="dateOfBirth" required >
+      <div [hidden]="dateOfBirth.pristine || dateOfBirth.valid"
+           class="alert alert-danger">
+        Date of birth is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="city">City:</label>
+      <input type="text" class="form-control" id="city" required formControlName="city">
+      <div [hidden]="city.pristine || city.valid"
+           class="alert alert-danger">
+        City of employment is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="salary">Salary:</label>
+      <input type="number" class="form-control" id="salary" required step="0.01" formControlName="salary">
+      <div [hidden]="salary.pristine || salary.valid"
+           class="alert alert-danger">
+        Salary is required.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="gender">Gender:</label>
+      <input type="text" class="form-control" id="gender" formControlName="gender" placeholder="M, F or X">
+      <div [hidden]="gender.pristine || gender.valid"
+           class="alert alert-danger">
+        Gender should be M, F or X.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" formControlName="email">
+      <div [hidden]="email.pristine || email.valid"
+           class="alert alert-danger">
+        Wrong email format.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="employeeForm.invalid">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,7 @@
+# Fichiers du système et des éditeurs à la racine du dépôt.
+# client/ et server/ gardent leur propre .gitignore (node_modules, dist, build, .gradle...).
+.DS_Store
+Thumbs.db
+/.idea/
+/.vscode/
+*.iml

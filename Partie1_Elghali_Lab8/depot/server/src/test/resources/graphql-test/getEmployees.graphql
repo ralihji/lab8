@@ -1,0 +1,12 @@
+# Copie exacte de GET_EMPLOYEES (client/src/app/service/employee.service.ts)
+query {
+  employees {
+    id
+    name
+    dateOfBirth
+    city
+    salary
+    gender
+    email
+  }
+}

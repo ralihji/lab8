@@ -1,0 +1,4 @@
+# Fins de ligne fixes : sinon, avec core.autocrlf sous Windows, bash refuse les scripts (\r).
+*.sh    text eol=lf
+gradlew text eol=lf
+*.bat   text eol=crlf

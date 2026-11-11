@@ -1,0 +1,25 @@
+<a class="btn btn-primary" [routerLink]="['/employee']">Add Employee</a>
+<div class="container">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Date of birth</th>
+      <th scope="col">City</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let emp of employees.$ | async; trackBy: identify">
+      <td>{{emp.name}}</td>
+      <td>{{emp.dateOfBirth | date :'d/MMM/y'}}</td>
+      <td>{{emp.city}}</td>
+      <td>{{emp.salary}}</td>
+      <td>{{emp.gender}}</td>
+      <td>{{emp.email}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
