@@ -16,3 +16,19 @@ type Employee {
     gender: String
     email: String
 }
+
+# Données du formulaire du client. Les champs sont facultatifs dans le schéma,
+# comme CreateEmployeeInput.kt : le résolveur vérifie les champs obligatoires.
+input CreateEmployeeInput {
+    name: String
+    dateOfBirth: String
+    city: String
+    salary: Float
+    gender: String
+    email: String
+}
+
+type Mutation {
+    # Ajout d'un employé (mutation ADD_EMPLOYEE du client) ; renvoie l'employé enregistré
+    newEmployee(createEmployeeInput: CreateEmployeeInput!): Employee!
+}
